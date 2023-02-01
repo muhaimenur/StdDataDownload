@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="json-default" namespace="/">
+
+
+
+<action name="registerAct" class="com.service.registerService" method="registerInsert">
+	<result name="Registration Successful" type="json">/Register.jsp</result>
+	<result name="failed" type="json">/LoginPage.jsp</result>
+</action>
+
+<action name="passChangeAct" class="com.service.changePassService">
+	<result name="Update Successful" type="json">/Register.jsp</result>
+	<result name="Update Failed" type="json">/LoginPage.jsp</result>
+</action>
+
+<action name="searchAct" class="com.service.searchService" method="chkCourse">
+	<result name="SUCCESS" type="json"></result>
+	<result name="failed" type="json"></result>
+</action>
+
+<action name="selectSession" class="com.service.searchService" method="selectSess">
+	<result name="SUCCESS" type="json"></result>
+	<result name="failed" type="json"></result>
+</action>
+
+<action name="loginAct" class="com.service.loginService" method="chkLogin">
+		<interceptor-ref name="completeStack"/>   
+    	<interceptor-ref name="execAndWait"/> 
+    	<result name="success">/Home.jsp</result>
+		<result name="error">/LoginPage.jsp</result>
+    	<result name="wait">/Loader.jsp</result>
+			
+</action>
+<action name="searchArc" class="com.service.archiveService" method="archive">
+			<result name="SUCCESS" >/Archive.jsp</result>
+		</action>
+<action name="download" class="com.service.archiveDownload">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
+<action name="logout" class="com.service.loginService" method="logout">
+			<result name="LOGOUT">/LoginPage.jsp</result>
+		</action>
+<action name="loadCaptcha" class="com.action.login.CaptchaAction">
+</action>
+
+
+
+</package>
+
+</struts>    

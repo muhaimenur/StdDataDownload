@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>STD_AUTH</display-name>
+  <welcome-file-list>
+    <welcome-file>/WEB-INF/jsp/LoginPage.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Register.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register.jsp</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>ChangePassword</servlet-name>
+    <jsp-file>/WEB-INF/jsp/ChangePassword.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword</servlet-name>
+    <url-pattern>/ChangePassword.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Home.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/Home.jsp</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>Login</servlet-name>
+    <jsp-file>/WEB-INF/jsp/LoginPage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/LoginPage.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Archive</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Archive.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Archive</servlet-name>
+    <url-pattern>/Archive.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Loader</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Loader.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Loader</servlet-name>
+    <url-pattern>/Loader.jsp</url-pattern>
+  </servlet-mapping>
+</web-app>
